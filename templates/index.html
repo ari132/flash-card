@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-size: 25px;
+    text-align: center;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="center">
+    <h1>Flash-Card</h1>
+    <form action="/" method="POST" id="login-form">
+        <div>
+        <label>Username:</label>
+        <input type="text" name="username" required pattern="\S+" required />
+        </div><br>
+        <div>
+        <label>Password:</label>
+        <input type="text" name="password" required pattern="\S+" required />
+        </div><br>
+        <div>
+        <div>
+        <input type="submit" value = "Submit">
+        </div>
+    </form>
+    </div>  
+</body>
+</html>

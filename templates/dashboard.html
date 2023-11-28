@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-size: 25px;
+    }
+    h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 50px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <a href="../home">Home</a>&nbsp;&nbsp;
+    <a href="dashboard/add">Add Decks</a><hr>
+    {% if decks == [] %}
+        No Decks Added.
+    {% else %}
+    <h1>Your Decks</h1>
+    {% endif %}
+    {% for deck in decks %}
+    <div>
+        {{loop.index}}) <br>
+        Deck name: {{deck["deck_name"]}} <br>
+        Deck score: {{deck["deck_score"]}}% <br>
+        Last reviewed: {{deck["last_reviewed"]}}
+        <a href="dashboard/{{deck['deck_id']}}/review/0"><br>Review</a><br><br>
+    </div>
+    {% endfor %}
+
+    
+</body>
+</html>

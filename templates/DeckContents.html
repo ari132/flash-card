@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-size: 25px;
+    }
+    h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 50px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck Contents</title>
+</head>
+<body>
+    <a href="./AddCard">Add cards</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/{{user}}/home/DeckManagement">Go Back</a><hr>
+    {% if cards == [] %}
+    No Cards in this deck
+    {% else %}
+    <h1>Cards</h1>
+    {% endif %}
+    {% for card in cards %}
+    <div>
+        {{loop.index}})<br>
+        Question: {{card["question"]}} <br>
+        Answer: {{card["answer"]}}
+        &nbsp;
+        <a href="./{{card['card_id']}}/edit">Edit Card</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="./{{card['card_id']}}/delete">Delete Card</a>
+        <br>
+    </div>
+    <br>
+    {% endfor %}
+</body>
+</html>

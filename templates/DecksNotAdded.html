@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-size: 25px;
+    }
+    h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 50px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decks to be added</title>
+</head>
+<body>
+    <a href="../dashboard">Dashboard</a><hr>
+    {% if decks == [] %}
+    No Decks to Add.
+    {% else %}
+    <h1>Decks to be added</h1>
+    {% endif %}
+    {% for deck in decks %}
+    <div>
+        {{loop.index}})
+        Name: {{deck['deck_name']}}
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="add/{{deck['deck_id']}}">Add</a>
+    </div>
+    {% endfor %}
+</body>
+</html>

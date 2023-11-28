@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+        font-size: 25px;
+    }
+    h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Decks</title>
+</head>
+<body>
+    <a href="DeckManagement/add">Add Deck</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="../home">Home</a><hr>
+    {% if decks == [] %}
+        No Decks to show
+    {% else %}
+        <h1>All Decks</h1>
+    {% endif %}
+    {% for deck in decks %}
+    <div>
+        {{loop.index}})<br>
+        Name: {{deck["deck_name"]}} <br>
+        <a href="DeckManagement/{{deck['deck_id']}}/view">View/Add Cards</a>&nbsp;&nbsp;
+        <a href="DeckManagement/{{deck['deck_id']}}/edit">Edit Deck</a>&nbsp;&nbsp;
+        <a href="DeckManagement/{{deck['deck_id']}}/delete">Delete Deck</a>
+        <br><br>
+    </div>
+    {% endfor %}
+</body>
+</html>
